@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  krustur.owinmarkdown.host:
+    image: krustur.owinmarkdown.host
+    build:
+      context: ./Krustur.OwinMarkdown.Host
+      dockerfile: Dockerfile

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  krustur.owinmarkdown.host:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+networks:
+  default:
+    external:
+      name: nat
