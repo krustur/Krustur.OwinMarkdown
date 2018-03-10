@@ -79,29 +79,17 @@ namespace Krustur.OwinMarkdown.Host
                         await context.Response.WriteAsync(htmlStart);
                         await context.Response.WriteAsync(html);
                         await context.Response.WriteAsync(htmlEnd);
-                    }
-
-                    //var html = Markdown.ToHtml(markdown);
-                    //var html = CommonMark.CommonMarkConverter.Convert(markdown);
-                    // parse markdown into document structure
-                    //var document = CommonMarkConverter.Parse("[click this link](~/hello)");
-                    //var document = CommonMarkConverter.Parse("markdown");
-                    //var html = document.Document;
-
-                    //await context.Response.WriteAsync(html);
+                    }                    
                 }
                 else
                 {
                     await next.Invoke();
                 }
-
             });
-
 
             var physicalFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Markdown");
             app.UseStaticFiles(new StaticFileOptions
             {
-                //RequestPath = Path.Combine(ContentRootPath, "Markdown")
                 FileProvider = new PhysicalFileProvider(physicalFilePath),
                 ServeUnknownFileTypes = true,
                 RequestPath = ""
