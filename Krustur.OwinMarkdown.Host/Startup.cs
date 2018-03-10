@@ -92,9 +92,8 @@ namespace Krustur.OwinMarkdown.Host
                 }
                 else
                 {
-
+                    await next.Invoke();
                 }
-                await next.Invoke();
 
             });
 
